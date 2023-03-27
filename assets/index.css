@@ -1,0 +1,289 @@
+/*=================================================================*/
+/*==================== CONTENTS - SECTIONS ========================*/
+/*=================================================================*/
+
+/* projetos */
+#projetos {
+    padding-top: 12.0rem;
+    background: linear-gradient(180deg, rgba(2,62,125,1) 0%, rgba(151,157,172,1) 100%);
+}
+
+#projetos .title h2 {
+    color: var(--color-white);
+}
+
+#projetos .title p {
+    color: var(--color-light);
+}
+
+#projetos .title small {
+    color: var(--color-blue-soft);
+}
+
+#projetos .cards {
+    gap: 2.0rem;
+}
+
+#projetos .cards .card {
+    flex: 0 0 50%;
+    position: relative;
+    max-width: calc(50% - 1.0rem);
+    box-shadow: 0rem 0.4rem 1.0rem rgba(51, 65, 92, 0.3);
+
+    overflow: hidden;
+    text-align: center;
+    border-radius: 0.8rem;
+    background: var(--color-white);
+    box-shadow: 0px 4px 10px rgba(51, 65, 92, 0.3);
+}
+
+#projetos .cards .card > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+} 
+
+#projetos .cards .card h3 {
+    font-weight: 500;
+    font-size: 2.8rem;
+    line-height: 3.6rem;
+    margin-bottom: 2.0rem;
+    color: var(--color-white);
+    text-transform: uppercase;
+    font-family: var(--font-aquire);
+}
+
+#projetos .cards .card .tech {
+    gap: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 3.5rem;
+    justify-content: center;
+}
+
+#projetos .cards .card .tech p {
+    flex: 0 0 100%;
+    font-weight: 300;
+    margin-bottom: 0rem;
+    color: var(--color-white);
+}
+
+#projetos .cards .card .tech i {
+    font-size: 2.5rem;
+    color: var(--color-white);
+}
+
+#projetos .cards .card small {
+    opacity: 80%;
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+    letter-spacing: 0em;
+    text-transform: none;
+    color: var(--color-light);
+    font-family: var(--font-jost);
+}
+
+#projetos .cards .card .details {
+    opacity: 0;
+    top: 0rem;
+    left: 0rem;
+    right: 0rem;
+    bottom: 0rem;
+    position: absolute;
+    padding: 3.6rem 0rem;
+    transition: opacity 0.3s ease;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+
+/* habilidades */
+#habilidades {
+    background: linear-gradient(180deg, rgba(151,157,172,1) 0%, rgba(217,217,217,1) 100%);
+}
+
+#habilidades .abilities {
+    gap: 2.0rem;
+    margin-bottom: 4.0rem;
+}
+
+#habilidades .abilities .tool {
+    flex: 0 0 25%;
+    max-width: calc(25% - 2.0rem);
+
+    padding: 2.0rem;
+    border-radius: 1.2rem;
+    background: var(--color-white);
+    box-shadow: 0rem 0.4rem 1.0rem rgba(51, 65, 92, 0.3);
+}
+
+#habilidades .abilities .tool img {
+    width: 100%;
+    margin: 0rem auto;
+    max-width: 15.0rem;
+}
+
+#habilidades .others p {
+    color: var(--color-blue-gray);
+}
+
+/* contato */
+#contato {
+    background: linear-gradient(180deg, rgba(217,217,217,1) 0%, rgba(255,255,255,1) 100%);
+}
+
+#contato .content h2 {
+    margin-bottom: 6.0rem;
+}
+
+#contato .links {
+    gap: 2.0rem
+}
+
+#contato .links a {
+    font-size: 2.8rem;
+    line-height: 2.8rem;
+    color: var(--color-white);
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    
+    width: 5.5rem;
+    height: 5.5rem;
+
+    overflow: hidden;
+    position: relative;
+    padding-left: 1.4rem;
+    border-radius: 0.8rem;
+    background: var(--color-primary);
+}
+
+#contato .links a .text {
+    opacity: 0;
+    display: block;
+    position: absolute;
+    transition: opacity 0.3s ease;
+
+    top: 50%;
+    left: 5.5rem;
+    transform: translateY(-50%);
+
+    text-align: left;
+    font-weight: 300;
+    font-size: 2.8rem;
+    line-height: 3.5rem;
+    white-space: nowrap;
+    font-family: var(--font-jost);
+}
+
+/* footer */
+.site-footer {
+    padding: 3.0rem 2.0rem 2.0rem;
+    border-top: 1px solid var(--color-light);
+}
+
+.site-footer p,
+.site-footer a {
+    display: block;
+    min-width: 15.0rem;
+
+    text-align: left;
+    font-weight: 300;
+    font-size: 1.6rem;
+    line-height: 2.0rem;
+    color: var(--color-blue-dark);
+}
+
+.site-footer a {
+    text-align: right;
+    text-decoration: underline;
+}
+
+.site-footer img {
+    max-width: 18.0rem;
+}
+
+/*=================================================================*/
+/*====================== TRANSITIONS ==============================*/
+/*=================================================================*/
+
+@media (min-width: 992px) {
+    #contato .links a:hover .text,
+    #projetos .cards .card:hover .details {
+        opacity: 1;
+    }
+
+    .site-footer a:hover {
+        color: var(--color-primary);
+    }
+}
+
+
+/*=================================================================*/
+/*======================== RESPONSIVE =============================*/
+/*=================================================================*/
+@media (max-width: 991px) {
+    #contato .links a {
+        gap: 0.8rem;
+        width: auto;
+        padding-right: 1.4rem;
+        justify-content: center;
+    }
+
+    #contato .links a i {
+        font-size: 2.4rem;
+    }
+
+    #contato .links a .text {
+        top: auto;
+        left: auto;
+        position: relative;
+
+        opacity: 1;
+        transform: none;
+
+        font-size: 2.0rem;
+        line-height: 2.5rem;
+    }
+}
+
+@media (max-width: 767px) {
+    #projetos .cards .card {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 575px) {
+    #habilidades .abilities .tool {
+        flex: 0 0 50%;
+        max-width: calc(50% - 2.0rem);
+    }
+
+    #inicio .description.dk {
+        display: none;
+    }
+
+    #inicio .description.mb {
+        display: block;
+    }
+
+    .site-footer .flex {
+        gap: 1.2rem;
+        justify-content: center;
+    }
+
+    .site-footer p {
+        margin-bottom: 0.8rem;
+    }
+
+    .site-footer p, 
+    .site-footer a {
+        flex: 0 0 100%;
+        max-width: 100%;
+        text-align: center;
+    }
+}
