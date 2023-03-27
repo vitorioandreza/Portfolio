@@ -316,7 +316,7 @@
 				<div class="flex wrap align-center justify-space-between">
 					<p>&copy; Todos os direitos reservados</p>
 					<img src="assets/images/logo-dark.svg" alt="" width="250" height="28" loading="lazy">
-					<a href="#" target="_blank" rel="noopener">Código fonte</a>
+					<a href="https://github.com/vitorioandreza/Portfolio" target="_blank" rel="noopener">Código fonte</a>
 				</div>
 			</div>
 		</footer>
