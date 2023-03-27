@@ -158,6 +158,20 @@ ol {
     list-style: none;
 }
 
+::-webkit-scrollbar {
+    width: 1.0rem;
+    border-radius: 0.2rem;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-light); 
+}
+
+::-webkit-scrollbar-thumb {
+    transition: background 0.2s ease;
+    background: rgba(151,157,172,0.8); 
+}
+
 /*=================================================================*/
 /*======================== LIBRARY ================================*/
 /*=================================================================*/
@@ -327,14 +341,27 @@ ol {
 }
 
 .site-header .navbar {
-    height: 8.5rem;
     padding: 0rem 2.0rem;
+    transition: height 0.4s ease;
+}
+
+.site-header .navbar.nav-sm {
+    display: none;
+}
+
+.site-header .navbar.nav-lg {
+    display: block;
+    height: 12.0rem;
+}
+
+.site-header.shrink .navbar.nav-lg {
+    height: 8.5rem;
 }
 
 .site-header .brand {
-    height: 6.5rem;
-    flex: 0 0 6.5rem;
-    max-width: 6.5rem;
+    width: 7.0rem;
+    height: 7.0rem;
+    display: block;
 
     background-size: contain;
     background-position: center;
@@ -350,16 +377,12 @@ ol {
     display: none;
 }
 
-.site-header .menu {
-    flex: 0 0 100%;
-    max-width: calc(100% - 8.5rem);
+.site-header .navbar.nav-lg .menu {
+    gap: 4.0rem;
+    height: 100%;
 }
 
-.site-header .menu ul {
-    gap: 3.0rem;
-}
-
-.site-header .menu li a {
+.site-header .menu li a:not(.brand) {
     padding: 0rem 2.0rem;
     border: 1px solid transparent;
 
@@ -414,7 +437,7 @@ ol {
     overflow: hidden;
     text-align: center;
     white-space: nowrap;
-    animation: WritingView 4s steps(90) normal both;
+    animation: WritingView 1.8s steps(90) normal both;
 }
 
 .preload .title span {
@@ -433,11 +456,11 @@ ol {
 }
 
 .preload .title span:nth-child(1) {
-    animation: 2s MoveLeft 4s forwards linear;
+    animation: 1.2s MoveLeft 1.8s forwards linear;
 }
 
 .preload .title span:nth-child(2) {
-    animation: 2s MoveRight 4s forwards linear;
+    animation: 1.2s MoveRight 1.8s forwards linear;
 }
 
 .preload .subtitle {
@@ -459,7 +482,7 @@ ol {
     overflow: hidden;
     white-space: nowrap;
     display: inline-block;
-    animation: 4s ZoomIn 6s normal both;
+    animation: 1.8s ZoomIn 3s normal both;
 }
 
 .preload .subtitle span.dk {
@@ -473,13 +496,13 @@ ol {
 /* section inicio */
 #inicio {
 	height: 100vh;
-    padding-top: 8.5rem;
-    min-height: calc(65.0rem - 8.5rem);
+    padding-top: 12.0rem;
+    min-height: calc(65.0rem - 12.0rem);
 	background: linear-gradient(180deg, #001845 0%, #023E7D 100%);
 }
 
 #inicio .block {
-	width: 70%;
+	width: 65%;
 	margin: 0rem auto;
 }
 
@@ -612,23 +635,9 @@ ol {
     padding-right: 1.2rem;
 }
 
-#sobre .modal-content::-webkit-scrollbar {
-    width: 0.6rem;
-    border-radius: 0.2rem;
-}
-
-#sobre .modal-content::-webkit-scrollbar-track {
-    background: var(--color-light); 
-}
-
-#sobre .modal-content::-webkit-scrollbar-thumb {
-    background: rgba(151,157,172,0.8); 
-}
-
 #sobre .modal-content .photo {
     flex: 0 0 40%;
     overflow: hidden;
-    border-radius: 1.5rem;
     max-width: calc(40% - 1.5rem);
 
     display: flex;
@@ -638,10 +647,11 @@ ol {
 }
 
 #sobre .modal-content .photo img {
-    width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: bottom;
+    margin: 0rem auto;
+    border-radius: 1.5rem;
+    object-position: center;
 }
 
 #sobre .modal-content .about {
@@ -794,6 +804,10 @@ ol {
         text-decoration: none;
     }
 
+    ::-webkit-scrollbar-thumb:hover {
+        background: rgba(151,157,172,1); 
+    }
+
     .site-header .menu li a:hover {
         border-color: var(--color-white);
     }
@@ -875,13 +889,18 @@ ol {
         }
     }
 
-    .site-header .navbar,
-    .site-header.shrink .navbar {
+    .site-header .navbar.nav-sm {
+        display: flex;
         height: 7.0rem;
+    }
+
+    .site-header .navbar.nav-lg {
+        display: none;
     }
 
     .site-header .brand,
     .site-header.shrink .brand {
+        width: 5rem;
         height: 5.0rem;
     }
 
@@ -967,7 +986,7 @@ ol {
         margin-bottom: 0rem;
     }
 
-    .site-header .menu ul li a {
+    .site-header .menu li a:not(.brand) {
         color: var(--color-blue-marine);
     }
 
@@ -981,6 +1000,7 @@ ol {
     #sobre .modal-content .about {
         flex: 0 0 100%;
         max-width: 100%;
+        text-align: center;
     }
 
     #sobre .modal-content .photo {
@@ -1030,5 +1050,10 @@ ol {
     #inicio .description.mb,
     .preload .subtitle span.mb {
         display: block;
+    }
+
+    #inicio .description {
+        width: 80%;
+        margin: 1.2rem auto 0rem;
     }
 }
